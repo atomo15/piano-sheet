@@ -18,19 +18,31 @@ export default function App() {
   //console.log(a.length)
   return (
     <center>
-      <h1>Data from sheets</h1>
-      <ul>
+      <h1>Piano sheets</h1>
+      <table style={{border:'10px solid'}}>
+      {/* <ul> */}
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Sheet</th>
+        </tr>
         {dataset.map((item, i) => (
           
-          <Fragment key={i}>
-            <li>Song - {item.Song}</li>
-            <li>Artist - {item.Artist}</li>
-            {/* <li>URL -- {item.URL}</li> */}
-            <li><a href={item.URL}><button type="submit">Get Sheet</button></a></li>
-            <br />
-          </Fragment>
+          // <Fragment key={i}>
+          //   <li>Song - {item.Song}</li>
+          //   <li>Artist - {item.Artist}</li>
+          //   {/* <li>URL -- {item.URL}</li> */}
+          //   <li><a href={item.URL}><button type="submit">Get Sheet</button></a></li>
+          //   <br />
+          // </Fragment>
+          <tr>
+            <td>{item.Song}</td>
+            <td>{item.Artist}</td>
+            <td><a href={item.URL}><button type="submit">Get Sheet</button></a></td>
+          </tr>
         ))}
-      </ul>
+      {/* </ul> */}
+      </table>
     </center>
         
   );
